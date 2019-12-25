@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#30b9df"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.dainc.sessiontest.LoginActivity"
+    >
+
+    <TextView
+        android:text="      ログイン      "
+        android:textSize="30sp"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/date"
+        android:id="@+id/imageView"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLength="8"
+        android:maxLines="1"
+        android:lines="1"
+        android:hint="ユーザーID"
+        android:drawableLeft="@drawable/ic_account_box_black_24dp"
+        android:drawablePadding="10dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="26dp"
+        android:id="@+id/etUserId"
+        android:layout_alignLeft="@+id/textView"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:maxLength="8"
+        android:hint="パスワード"
+        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+        android:drawablePadding="10dp"
+        android:layout_below="@+id/etUserId"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="10dp"
+        android:id="@+id/etPassword"
+        android:layout_alignLeft="@+id/textView" />
+
+    <Button
+        android:text="ログイン"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:id="@+id/btnLogin"
+        android:textColor="#000000"
+        android:background="@drawable/mybutton"
+        android:layout_alignRight="@+id/etPassword"
+        android:layout_alignLeft="@+id/etPassword"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>
