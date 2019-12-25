@@ -26,6 +26,19 @@ public class UserModel implements Serializable {
         this.admin = admin;
     }
 
+    public UserModel(String userId, String familyName, String firstName, int age, int genderId, int authorityId, int admin, String password, String authorityName, String genderName) {
+        this.userId = userId;
+        this.familyName = familyName;
+        this.firstName = firstName;
+        this.age = age;
+        this.genderId = genderId;
+        this.authorityId = authorityId;
+        this.admin = admin;
+        this.password = password;
+        this.authorityName = authorityName;
+        this.genderName = genderName;
+    }
+
     public String getsNo() {
         return sNo;
     }

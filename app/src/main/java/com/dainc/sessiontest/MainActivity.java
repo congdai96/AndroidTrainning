@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity
     private EditText edtFamilyName;
     private EditText edtFirstName;
     private Button btnSearch;
+    private UserModel selectedUser;
     RequestQueue queue;
 
     @Override
@@ -100,16 +102,8 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
 
-                String sno = ((TextView)view.findViewById(R.id.sNo)).getText().toString();
-                String product = ((TextView)view.findViewById(R.id.product)).getText().toString();
-                String category = ((TextView)view.findViewById(R.id.category)).getText().toString();
-                String price = ((TextView)view.findViewById(R.id.price)).getText().toString();
-
-                Toast.makeText(getApplicationContext(),
-                        "S no : " + sno +"\n"
-                                +"Product : " + product +"\n"
-                                +"Category : " +category +"\n"
-                                +"Price : " +price, Toast.LENGTH_SHORT).show();
+                String userId = ((TextView)view.findViewById(R.id.product)).getText().toString();
+                getUserInf(IPConfig.GET_INF_USER,userId);
             }
         });
 
@@ -318,6 +312,76 @@ public class MainActivity extends AppCompatActivity
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spAuthority.setAdapter(dataAdapter);
 
+    }
+
+    private void getUserInf(String url, final String userId){
+        queue = Volley.newRequestQueue(this);
+        String finalUrl = url+"?userId="+userId;
+        StringRequest getRequest = new StringRequest(Request.Method.GET, finalUrl,
+                new Response.Listener <String> () {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject object = null;
+                        try {
+                            object = new JSONObject(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if(object==null) {
+                            makeToask("指定したユーザーが存在しません。",Color.RED);
+                            return;
+                        }
+                        try {
+                            String userId = object.getString("userId");
+                            String familyName = object.getString("familyName");
+                            String firstName = object.getString("firstName");
+                            String password = object.getString("password");
+                            String authorityName = "";
+                            String genderName = "";
+                            try {
+                                authorityName = object.getJSONObject("mstRoleModel").getString("authorityName");
+                            }catch(JSONException e){
+                            }
+                            try {
+                                genderName = object.getJSONObject("mstGenderModel").getString("genderName");
+                            }catch(JSONException e){
+                            }
+                            int authorityId = object.getInt("authorityId");
+                            int genderId = object.getInt("genderId");
+                            int admin = object.getInt("admin");
+                            int age = object.getInt("age");
+
+                            selectedUser = new UserModel(userId,familyName,firstName,age,genderId,authorityId,admin,password,authorityName,genderName);
+                            Intent i=new Intent(MainActivity.this, FullInfActivity.class);
+                            i.putExtra("selectedUser",selectedUser);
+                            startActivity(i);
+
+
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                            makeToask("null",Color.RED);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("ERROR", "Error => " + error.toString());
+                        Toast.makeText(MainActivity.this, "Lỗi mạng", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        )
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer " + share.getString(SystemConstant.SHARE_TOKEN,""));
+                return headers;
+            }
+
+        };
+
+        queue.add(getRequest);
     }
 
 
