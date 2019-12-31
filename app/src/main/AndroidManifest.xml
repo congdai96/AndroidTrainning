@@ -29,6 +29,7 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".FullInfActivity" />
+        <activity android:name=".ShuukeiActivity" />
     </application>
 
 </manifest>

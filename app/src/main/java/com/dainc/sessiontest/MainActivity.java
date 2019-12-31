@@ -158,6 +158,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
+            Intent i=new Intent(MainActivity.this, ShuukeiActivity.class);
+            startActivity(i);
+            finish();
 
         } else if (id == R.id.nav_logout) {
             share.edit().clear().commit();
@@ -329,6 +332,7 @@ public class MainActivity extends AppCompatActivity
                         }
                         if(object==null) {
                             makeToask("指定したユーザーが存在しません。",Color.RED);
+                            btnSearch.callOnClick();
                             return;
                         }
                         try {

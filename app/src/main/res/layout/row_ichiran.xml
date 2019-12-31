@@ -14,6 +14,7 @@
         android:padding = "5dp"
         android:text = "No"
         android:textSize="15dp"
+        android:textColor="@color/colorDark"
         android:singleLine = "true"/>
 
     <TextView
@@ -26,6 +27,7 @@
         android:padding = "5dp"
         android:text = "ユーザーID"
         android:textSize="15dp"
+        android:textColor="@color/colorDark"
         android:singleLine = "true" />
 
     <TextView
@@ -38,6 +40,7 @@
         android:padding = "5dp"
         android:text = "氏名"
         android:textSize="15dp"
+        android:textColor="@color/colorDark"
         android:singleLine = "true" />
 
     <TextView
@@ -50,5 +53,6 @@
         android:padding = "5dp"
         android:text = "役職"
         android:textSize="15dp"
+        android:textColor="@color/colorDark"
         android:singleLine = "true" />
 </LinearLayout>
