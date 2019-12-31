@@ -1,0 +1,97 @@
+<LinearLayout
+    android:id = "@+id/relativeLayout1"
+    android:layout_width = "fill_parent"
+    android:layout_height = "wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id = "@+id/roleName"
+        android:layout_width = "0dp"
+        android:layout_height = "50dp"
+        android:layout_weight = "2"
+        android:background = "@drawable/cell_shape"
+        android:gravity = "left|center"
+        android:padding = "5dp"
+        android:text = "メダリスト"
+        android:textSize="15dp"
+        android:textColor="@color/colorDark"
+        android:singleLine = "true"/>
+
+    <TextView
+        android:id = "@+id/male"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:gravity = "right|center"
+        android:padding = "5dp"
+        android:text = "male"
+        android:textSize="15dp"
+        android:textColor="@color/colorDark"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/female"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:gravity = "right|center"
+        android:padding = "5dp"
+        android:text = "female"
+        android:textSize="15dp"
+        android:textColor="@color/colorDark"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/ageMax19"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:gravity = "right|center"
+        android:padding = "5dp"
+        android:text = "ageMax19"
+        android:textSize="15dp"
+        android:textColor="@color/colorRed"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/ageMin20"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:gravity = "right|center"
+        android:padding = "5dp"
+        android:text = "ageMin20"
+        android:textSize="15dp"
+        android:textColor="@color/colorDark"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/notFull"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:gravity = "right|center"
+        android:padding = "5dp"
+        android:text = "notFull"
+        android:textSize="15dp"
+        android:textColor="@color/colorDark"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/notAge"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:gravity = "right|center"
+        android:padding = "5dp"
+        android:text = "notAge"
+        android:textSize="15dp"
+        android:textColor="@color/colorRed"
+        android:singleLine = "true" />
+</LinearLayout>

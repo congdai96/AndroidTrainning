@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#30b9df"
+    tools:context="com.dainc.sessiontest.MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+
+    <LinearLayout
+        android:id = "@+id/relativeLayout1"
+        android:layout_width = "fill_parent"
+        android:layout_height = "80dp"
+        android:background="#ADECEEF1"
+        android:padding = "20dp"
+        android:gravity = "center"
+        android:layout_below="@+id/relativeLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal">
+
+
+            <Button
+                android:id = "@+id/btnBack"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight = "0.75"
+                android:text = "一覧へ戻る"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/mybutton"
+                android:backgroundTint="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            />
+
+        <Button
+            android:id = "@+id/btnReset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight = "0.75"
+            android:text = "集計"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/mybutton"
+            android:backgroundTint="@color/colorBlue"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/relativeLayout2"
+        android:layout_width = "fill_parent"
+        android:layout_height = "80dp"
+        android:background="#ADECEEF1"
+        android:layout_below="@+id/relativeLayout1"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "2"
+            android:background = "@drawable/cell_shape"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "役職"
+            android:textColor = "#000000" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:background = "@drawable/cell_shape"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "男の人数"
+            android:textColor = "#000000" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:background = "@drawable/cell_shape"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "女の人数"
+            android:textColor = "#000000" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/cell_shape"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="未登録の人数"
+            android:textColor="@color/colorRed" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:background = "@drawable/cell_shape"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "20歳未満人数"
+            android:textColor = "#000000" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:background = "@drawable/cell_shape"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "20歳以上人数"
+            android:textColor = "#000000" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:background = "@drawable/cell_shape"
+            android:gravity = "center"
+            android:padding = "5dp"
+            android:text = "年齢未登録人数"
+            android:textColor = "@color/colorRed" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id = "@+id/listviewShuukei"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_below="@+id/relativeLayout2"
+        android:divider = "@null"/>
+
+</RelativeLayout>
