@@ -111,8 +111,6 @@ public class EditActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(EditActivity.this, MainActivity.class);
-                startActivity(i);
                 finish();
             }
         });
