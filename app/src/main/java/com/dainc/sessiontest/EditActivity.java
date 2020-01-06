@@ -52,7 +52,7 @@ public class EditActivity extends AppCompatActivity {
     private Spinner spRole;
     private CheckBox cbAdmin;
 
-    private Button btnAdd;
+    private Button btnEdit;
     private Button btnBack;
 
     private ArrayList<RoleModel> roleList;
@@ -78,7 +78,7 @@ public class EditActivity extends AppCompatActivity {
         spRole = (Spinner) findViewById(R.id.spRole);
         cbAdmin = (CheckBox) findViewById(R.id.cbAdmin);
 
-        btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnEdit = (Button) findViewById(R.id.btnEdit);
         btnBack = (Button) findViewById(R.id.btnBack);
 
         intent = getIntent();
@@ -115,7 +115,7 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!checkValidate()){
@@ -215,8 +215,12 @@ public class EditActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }
-                    else if (status.equals("user_haved")){
-                        makeToask("ユーザーIDが保存している。", Color.RED);
+                    else if (status.equals("not_haved")){
+                        makeToask("指定したユーザーが存在しません。", Color.RED);
+                        Intent intent = new Intent(EditActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
                     }
                 }catch (JSONException e){
                     e.printStackTrace();

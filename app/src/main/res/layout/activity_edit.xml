@@ -392,11 +392,11 @@
                 />
 
             <Button
-                android:id = "@+id/btnAdd"
+                android:id = "@+id/btnEdit"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight = "0.75"
-                android:text = "登録"
+                android:text = "更新"
                 android:textColor="@color/colorWhite"
                 android:background="@drawable/mybutton"
                 android:backgroundTint="@color/colorBlue"/>
