@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#30b9df"
+    tools:context="com.dainc.sessiontest.DeleteActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:text="以下のデータを削除してよろしいですか"
+        android:id="@+id/textView1"
+        android:textSize="30sp"
+        android:padding="10dp"
+        android:textColor="@color/colorRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:layout_marginTop="70dp"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout2"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:layout_below="@+id/textView1"
+    android:layout_marginTop="20dp"
+    android:background="@color/colorWhite"
+    android:gravity="center"
+    android:orientation="horizontal"
+    >
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#30b9df"
+        android:text="" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0.7"
+        android:gravity="left"
+        android:background="@drawable/feild_shape"
+        android:text="ユーザID:"
+        android:textSize="25sp"
+        android:padding="2dp"/>
+
+    <TextView
+        android:id="@+id/tvUserId"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0.5"
+        android:background="@drawable/feild_shape"
+        android:padding="2dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="#30b9df"
+        android:text="" />
+</LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/relativeLayout2"
+        android:background="@color/colorWhite"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#30b9df"
+            android:text="" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0.7"
+            android:gravity="left"
+            android:background="@drawable/feild_shape"
+            android:text="氏名:"
+            android:textSize="25sp"
+            android:padding="2dp"/>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/feild_shape"
+            android:padding="2dp"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#30b9df"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/relativeLayout1"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:padding = "50dp"
+        android:gravity = "center"
+        android:layout_below="@+id/relativeLayout3"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id = "@+id/btnBack"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight = "0.75"
+            android:text = "戻る"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/mybutton"
+            android:backgroundTint="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight = "1"
+            android:gravity = "center"
+            />
+
+        <Button
+            android:id = "@+id/btnDelete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight = "0.75"
+            android:text = "削除"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/mybutton"
+            android:backgroundTint="@color/colorAccent"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
