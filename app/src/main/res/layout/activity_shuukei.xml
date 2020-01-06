@@ -129,7 +129,7 @@
             android:layout_weight = "1"
             android:background = "@drawable/cell_shape"
             android:gravity = "center"
-            android:padding = "5dp"
+            android:padding = "1dp"
             android:text = "年齢未登録人数"
             android:textColor = "@color/colorRed" />
 

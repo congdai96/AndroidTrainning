@@ -30,6 +30,12 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".FullInfActivity" />
         <activity android:name=".ShuukeiActivity" />
+        <activity android:name=".DeleteActivity" />
+        <activity android:name=".DeleteSuccessActivity" />
+        <activity android:name=".AddActivity" />
+        <activity android:name=".AddSuccessActivity" />
+        <activity android:name=".EditActivity" />
+        <activity android:name=".EditSuccessActivity" />
     </application>
 
 </manifest>

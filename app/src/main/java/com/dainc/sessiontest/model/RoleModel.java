@@ -1,6 +1,8 @@
 package com.dainc.sessiontest.model;
 
-public class RoleModel {
+import java.io.Serializable;
+
+public class RoleModel implements Serializable {
     private int authorityId;
     private String authorityName;
 

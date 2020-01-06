@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.dainc.sessiontest.model.RoleModel;
 import com.dainc.sessiontest.model.UserModel;
+
+import java.util.ArrayList;
 
 public class FullInfActivity extends AppCompatActivity {
 
@@ -22,12 +23,14 @@ public class FullInfActivity extends AppCompatActivity {
     private TextView tvRole;
     private TextView tvAdmin;
 
-    private Button btnAdd;
+    private Button btnEdit;
     private Button btnDelete;
     private Button btnBack;
 
     private Intent intent;
     private UserModel selectedUser;
+    private ArrayList<RoleModel> roleList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +38,8 @@ public class FullInfActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("詳細");
 
         Intent intent = getIntent();
-        UserModel selectedUser = (UserModel) intent.getSerializableExtra("selectedUser");
+        selectedUser = (UserModel) intent.getSerializableExtra("selectedUser");
+        roleList = (ArrayList<RoleModel>) intent.getSerializableExtra("roleList");
 
         tvUserId = (TextView) findViewById(R.id.tvUserId);
         tvPassword = (TextView) findViewById(R.id.tvPassword);
@@ -46,7 +50,7 @@ public class FullInfActivity extends AppCompatActivity {
         tvRole = (TextView) findViewById(R.id.tvRole);
         tvAdmin = (TextView) findViewById(R.id.tvAdmin);
 
-        btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnEdit = (Button) findViewById(R.id.btnEdit);
         btnDelete = (Button) findViewById(R.id.btnDelete);
         btnBack = (Button) findViewById(R.id.btnBack);
 
@@ -67,6 +71,27 @@ public class FullInfActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(FullInfActivity.this, DeleteActivity.class);
+                i.putExtra("selectedUser",selectedUser);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(FullInfActivity.this, EditActivity.class);
+                i.putExtra("selectedUser",selectedUser);
+                i.putExtra("roleList",roleList);
+                startActivity(i);
                 finish();
             }
         });

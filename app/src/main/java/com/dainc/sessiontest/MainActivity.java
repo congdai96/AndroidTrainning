@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
                 String userId = ((TextView)view.findViewById(R.id.product)).getText().toString();
                 getUserInf(IPConfig.GET_INF_USER,userId);
             }
@@ -156,6 +155,10 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            Intent i=new Intent(MainActivity.this, AddActivity.class);
+            i.putExtra("roleList",roleList);
+            startActivity(i);
+            finish();
 
         } else if (id == R.id.nav_slideshow) {
             Intent i=new Intent(MainActivity.this, ShuukeiActivity.class);
@@ -317,7 +320,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void getUserInf(String url, final String userId){
+    private void getUserInf(String url, String userId){
         queue = Volley.newRequestQueue(this);
         String finalUrl = url+"?userId="+userId;
         StringRequest getRequest = new StringRequest(Request.Method.GET, finalUrl,
@@ -358,6 +361,7 @@ public class MainActivity extends AppCompatActivity
                             selectedUser = new UserModel(userId,familyName,firstName,age,genderId,authorityId,admin,password,authorityName,genderName);
                             Intent i=new Intent(MainActivity.this, FullInfActivity.class);
                             i.putExtra("selectedUser",selectedUser);
+                            i.putExtra("roleList",roleList);
                             startActivity(i);
 
 
