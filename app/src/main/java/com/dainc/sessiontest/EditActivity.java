@@ -213,6 +213,7 @@ public class EditActivity extends AppCompatActivity {
                     if (status.equals("edit_success")) {
                         makeToask("更新できた。",Color.GREEN);
                         Intent intent = new Intent(EditActivity.this, EditSuccessActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
                     }
